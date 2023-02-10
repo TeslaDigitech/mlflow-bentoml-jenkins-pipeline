@@ -1,3 +1,4 @@
 mlflow
 bentoml
 sklearn 
+boto3
