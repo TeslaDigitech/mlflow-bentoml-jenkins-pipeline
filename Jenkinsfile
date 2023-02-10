@@ -47,7 +47,7 @@ pipeline{
                 sh "docker stop diabetes_pred || true" 
             }
         }
-     stage('docker stop container') {
+     stage('docker start container') {
             steps {
                 sh "docker run -itd --rm -p 3000:3000 --name diabetes_pred diabetes_pred_elastic:latest serve --production" 
             }
