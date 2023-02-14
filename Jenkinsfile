@@ -6,6 +6,8 @@ pipeline{
       
             steps{
                 sh "pip install -r requirements.txt "
+                sh "pip install mlflow"
+                sh "pip install bentoml"
 
             }
       
