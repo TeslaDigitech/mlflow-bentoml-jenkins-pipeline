@@ -26,7 +26,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "bentoml build || echo 'bento already exist'" 
+                sh "python3 subp.py" 
               
             }
         } 
