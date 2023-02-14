@@ -3,6 +3,8 @@ import bentoml
 from mlflow import MlflowClient
 from pprint import pprint
 
+
+os.environ['MLFLOW_S3_ENDPOINT_URL'] = "http://localhost:9000"
 mlflow.set_tracking_uri("http://localhost:5000")
 all_experiments = [exp.experiment_id for exp in mlflow.search_experiments()]
 df = mlflow.search_runs(experiment_ids=all_experiments,order_by=["metrics.rmse ASC"])
