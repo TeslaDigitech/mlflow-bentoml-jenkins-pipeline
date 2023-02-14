@@ -27,7 +27,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "mlflow --version"
+                sh "./test.sh"
               
             }
         } 
