@@ -9,8 +9,8 @@ df = mlflow.search_runs(experiment_ids=all_experiments,order_by=["metrics.rmse A
 run_id = df.loc[0]['run_id']
 print(run_id)
 
-artifact_path = f"mlartifacts/0/{run_id}/artifacts/model"
-#model_uri = f"S3://mlflow/0/{run_id}/artifacts/model"
+#artifact_path = f"mlartifacts/0/{run_id}/artifacts/model"
+model_uri = f"S3://mlflow/0/{run_id}/artifacts/model"
 model = mlflow.sklearn.load_model(artifact_path)
 print("Printing model uri")
 print(artifact_path)
