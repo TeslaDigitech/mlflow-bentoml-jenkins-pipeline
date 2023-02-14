@@ -7,7 +7,6 @@ pipeline{
             steps{
                 sh "pip install -r requirements.txt "
                 sh "pip install mlflow"
-                sh "pip install bentoml"
 
             }
       
@@ -28,6 +27,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
+                sh "pip install bentoml"
                 sh "bentoml --version" 
               
             }
