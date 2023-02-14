@@ -8,8 +8,7 @@ pipeline{
                 sh "pip3 install -r requirements.txt "
                 sh "export MLFLOW_TRACKING_URI=http://localhost:5000"
                 sh "export MLFLOW_S3_ENDPOINT_URL=http://localhost:9000"
-                sh "export AWS_ACCESS_KEY_ID=minio"
-                sh "export AWS_SECRET_ACCESS_KEY=minio123"
+                sh "export AWS_SHARED_CREDENTIALS_FILE=./aws/credentials"
                 
             }
       
