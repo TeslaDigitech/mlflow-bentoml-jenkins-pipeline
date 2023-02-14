@@ -15,6 +15,7 @@ pipeline{
     }
     stage('Training the model ') {
             steps {
+                sh "echo '$MLFLOW_S3_ENDPOINT_URL'"
                 sh "python3 train.py" 
               
             }
