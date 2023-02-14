@@ -2,6 +2,7 @@ import mlflow
 import bentoml
 from mlflow import MlflowClient
 from pprint import pprint
+import os
 
 
 os.environ['MLFLOW_S3_ENDPOINT_URL'] = "http://localhost:9000"
