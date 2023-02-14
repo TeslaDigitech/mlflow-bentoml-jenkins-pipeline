@@ -27,7 +27,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "./test.sh"
+                sh "sh test.sh"
               
             }
         } 
