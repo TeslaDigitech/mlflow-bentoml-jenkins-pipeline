@@ -6,14 +6,12 @@ pipeline{
       
             steps{
                 sh "pip3 install -r requirements.txt "
-                sh "export MLFLOW_TRACKING_URI=http://localhost:5000"
-                sh "export MLFLOW_S3_ENDPOINT_URL=http://localhost:9000"
+
             }
       
     }
     stage('Training the model ') {
             steps {
-                sh 'echo "$MLFLOW_S3_ENDPOINT_URL"'
                 sh "python3 train.py" 
               
             }
