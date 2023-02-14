@@ -28,7 +28,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "python3 subp.py" 
+                sh "bentoml --version" 
               
             }
         } 
