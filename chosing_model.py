@@ -14,9 +14,9 @@ print(run_id)
 
 #artifact_path = f"mlartifacts/0/{run_id}/artifacts/model"
 model_uri = f"S3://mlflow/0/{run_id}/artifacts/model"
-model = mlflow.sklearn.load_model(artifact_path)
+model = mlflow.sklearn.load_model(model_uri)
 print("Printing model uri")
-print(artifact_path)
+# print(artifact_path)
 print("Printing model")
 
 try :
