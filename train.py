@@ -14,7 +14,7 @@ from PIL import Image
 
 
 
-
+os.environ['MLFLOW_S3_ENDPOINT_URL'] = 'http://localhost:9090"
 # Load Diabetes datasets
 diabetes = datasets.load_diabetes()
 X = diabetes.data
