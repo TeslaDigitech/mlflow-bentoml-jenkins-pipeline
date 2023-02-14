@@ -27,8 +27,7 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "pip install bentoml"
-                sh "bentoml --version" 
+                sh "mlflow --version"
               
             }
         } 
