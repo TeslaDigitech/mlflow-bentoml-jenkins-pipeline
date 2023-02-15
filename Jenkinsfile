@@ -27,13 +27,13 @@ pipeline{
     }
     stage('Building the bento') {
             steps {
-                sh "python3 -m bentoml models list"
+                sh "python3 -m bentoml build || echo 'bento already exist'"
               
             }
         } 
     stage('bento containerize') {
             steps {
-                sh "bentoml containerize diabetes_pred_elastic:latest" 
+                sh "python3 -m bentoml containerize diabetes_pred_elastic:latest" 
             }
         }
     stage('docker stop container') {
