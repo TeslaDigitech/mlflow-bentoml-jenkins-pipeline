@@ -33,7 +33,7 @@ pipeline{
         } 
     stage('bento containerize') {
             steps {
-                sh "python3 -m bentoml containerize -t latest diabetes_pred_elastic:latest" 
+                sh "python3 -m bentoml containerize -t diabetes_pred_elastic:latest diabetes_pred_elastic:latest" 
             }
         }
     stage('docker stop container') {
