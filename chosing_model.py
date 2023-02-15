@@ -19,9 +19,6 @@ print("Printing model uri")
 # print(artifact_path)
 print("Printing model")
 
-if bentoml.models.get(f"diabetes_pred_elastic:{run_id}"):
-        print("Model already exist")
-else:
-        print("Saving the model")
-        bentoml.sklearn.save_model(f"diabetes_pred_elastic:{run_id}", model)
+print("Saving the model")
+bentoml.sklearn.save_model(f"diabetes_pred_elastic:{run_id}", model)
         
