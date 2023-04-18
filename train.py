@@ -13,8 +13,9 @@ from sklearn import datasets
 from PIL import Image
 
 
-
+# Set the environment variable for MLflow S3 endpoint
 os.environ['MLFLOW_S3_ENDPOINT_URL'] = "http://localhost:9000"
+
 # Load Diabetes datasets
 diabetes = datasets.load_diabetes()
 X = diabetes.data
@@ -32,7 +33,9 @@ print(data)
 import mlflow
 import mlflow.sklearn
 
+# Set the tracking URI for MLflow
 mlflow.set_tracking_uri("http://localhost:5000")
+
 # Evaluate metrics
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
@@ -53,7 +56,8 @@ if __name__ == "__main__":
     test_x = test.drop(["progression"], axis=1)
     train_y = train[["progression"]]
     test_y = test[["progression"]]
-
+    
+  # Get alpha and l1_ratio values from command line arguments or use default values
     alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.1
     l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.1
 
